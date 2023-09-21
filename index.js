@@ -86,7 +86,7 @@ function exibirResultados(resultados) {
     searchDiv.innerHTML = '';
 
     resultados.forEach(function (nome) {
-        var p = document.createElement('p');
+        var p = document.createElement('div');
         p.textContent = nome;
         searchDiv.appendChild(p);
     });
