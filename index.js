@@ -3,6 +3,13 @@
  */
 function background(){
 
+
+    // Seleciona o elemento body
+    var body = document.body;
+
+    // Define a cor de fundo para #BECCC3
+    body.style.backgroundColor = "#BECCC3";
+
     /**
      * Tarefa/Issue  1
      *
@@ -18,6 +25,16 @@ function background(){
  * na div id='result'
  */
 function show(){
+
+    // Recupera os valores dos campos de texto
+    var firstName = document.getElementById('fname').value;
+    var lastName = document.getElementById('lname').value;
+
+    // Combina os valores em um nome completo
+    var nomeCompleto = firstName + " " + lastName;
+
+    // Exibe o nome completo na div 'result'
+    document.getElementById('result').innerHTML = "Nome Completo: " + nomeCompleto;
 
      /**
       * Issue  2
@@ -35,6 +52,16 @@ function search(){
 
     var data = [{name: "Rodrigo"}, {name: "Ricardo"}, {name: "Fabio"}, {name: "Alex"}, {name: "Sílvia"}];
 
+    var filtro = document.getElementById('name').value.toLowerCase();
+            var resultados = [];
+
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].name.toLowerCase().startsWith(filtro)) {
+                    resultados.push(data[i].name);
+                }
+            }
+            exibirResultados(resultados);
+    
     /**
      * Issue 3
      *
@@ -52,6 +79,17 @@ function search(){
      * Além disso, a função removeAllChildren abaixo também pode ser útil para o desenvolvimento da solução
      */
 
+}
+
+function exibirResultados(resultados) {
+    var searchDiv = document.getElementById('search');
+    searchDiv.innerHTML = '';
+
+    resultados.forEach(function (nome) {
+        var p = document.createElement('p');
+        p.textContent = nome;
+        searchDiv.appendChild(p);
+    });
 }
 
 /**
