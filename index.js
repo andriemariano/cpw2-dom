@@ -34,7 +34,7 @@ function show(){
     var nomeCompleto = firstName + " " + lastName;
 
     // Exibe o nome completo na div 'result'
-    document.getElementById('result').innerHTML = "Nome Completo: " + nomeCompleto;
+    document.getElementById('result').innerHTML = nomeCompleto;
 
      /**
       * Issue  2
